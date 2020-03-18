@@ -17,8 +17,9 @@ namespace EventPlanning
             
             // e.g. container.RegisterType<ITestService, TestService>();
             Register<InfrastructureModule>(container);
+            Register<DomainModule>(container);
 
-            
+
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
 

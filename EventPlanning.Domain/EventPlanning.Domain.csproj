@@ -41,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IFieldsService.cs" />
+    <Compile Include="Interfaces\IEventsService.cs" />
+    <Compile Include="Interfaces\IUsersService.cs" />
+    <Compile Include="Models\DomainEvent.cs" />
+    <Compile Include="Models\DomainField.cs" />
+    <Compile Include="Models\DomainUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

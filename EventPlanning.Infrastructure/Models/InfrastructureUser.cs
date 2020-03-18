@@ -1,11 +1,15 @@
-﻿namespace EventPlanning.Infrastructure.Models
+﻿using System;
+
+namespace EventPlanning.Infrastructure.Models
 {
     public class InfrastructureUser
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string Email { get; set; }
 
         public string Password { get; set; }
+
+        public string Role { get; set; }
     }
 }

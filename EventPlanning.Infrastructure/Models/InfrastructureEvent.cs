@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace EventPlanning.Infrastructure.Models
 {
@@ -9,14 +10,16 @@ namespace EventPlanning.Infrastructure.Models
             EventsFields = new List<InfrastructureEventFields>();
         }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string Name { get; set; }
 
         public string DateTime { get; set; }
 
-        public List<InfrastructureEventFields> EventsFields { get; set; }
+        public Guid UserId { get; set; }
 
-        public int UserId { get; set; }
+        public InfrastructureUser User { get; set; }
+
+        public List<InfrastructureEventFields> EventsFields { get; set; }
     }
 }

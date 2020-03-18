@@ -41,11 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappers\DomainToInfrastructureEventMapper.cs" />
+    <Compile Include="Mappers\DomainToInfrastructureFieldMapper.cs" />
+    <Compile Include="Mappers\DomainToInfrastructureUserMapper.cs" />
+    <Compile Include="Mappers\InfrastructureToDomainEventMapper.cs" />
+    <Compile Include="Mappers\InfrastructureToDomainFieldMapper.cs" />
+    <Compile Include="Mappers\InfrastructureToDomainUserMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EventsService.cs" />
+    <Compile Include="Services\FieldsService.cs" />
+    <Compile Include="Services\UsersService.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Mappers\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\EventPlanning.Domain\EventPlanning.Domain.csproj">
+      <Project>{a725000f-a853-42ee-92ff-9ea86a7fde88}</Project>
+      <Name>EventPlanning.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventPlanning.Infrastructure\EventPlanning.Infrastructure.csproj">
+      <Project>{07ee19d2-678c-4929-8c5b-032cef56d316}</Project>
+      <Name>EventPlanning.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

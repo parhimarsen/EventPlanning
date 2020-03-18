@@ -1,19 +1,17 @@
-﻿
-
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using EventPlanning.Infrastructure.Models;
 
 namespace EventPlanning.Infrastructure.Interfaces
 {
     public interface IEventsFieldsRepository
     {
-        IEnumerable<InfrastructureField> GetAllFieldsOfEvent(int eventId);
+        Task<IEnumerable<InfrastructureField>> GetFieldsOfEvent(InfrastructureEvent @event);
 
-        void CreateEventField(int eventId, int fieldId);
+        Task CreateField(InfrastructureEvent @event, InfrastructureField field);
 
-        void DeleteEvent(int eventId);
+        Task DeleteField(InfrastructureEvent @event, InfrastructureField field);
 
-        void DeleteField(int fieldId);
+        Task DeleteEvent(InfrastructureEvent @event);
     }
 }

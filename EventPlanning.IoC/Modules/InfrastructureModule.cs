@@ -1,5 +1,7 @@
 ﻿using System.Configuration;
+using EventPlanning.Infrastructure.Interfaces;
 using EventPlanning.InfrastructureServices.Contexts;
+using EventPlanning.InfrastructureServices.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Unity;
 using Unity.Injection;
@@ -21,6 +23,8 @@ namespace EventPlanning.IoC.Modules
 
             container.RegisterType<MyContext>(new HierarchicalLifetimeManager(),
                 new InjectionConstructor(optionBuilder.Options));
+
+            container.RegisterType<IUnitOfWork, UnitOfWork>(new HierarchicalLifetimeManager());
         }
     }
 }

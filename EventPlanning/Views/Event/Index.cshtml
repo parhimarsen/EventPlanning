@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EventPlanning.Models.EventViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@foreach (var item in Model)
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            @foreach (var f in item.Fields)
+            {
+                <th>
+                    @f.Name
+                </th>
+            }
+        </tr>
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTime)
+            </td>
+            @foreach (var f in item.Fields)
+            {
+                <td>
+                    @f.Value
+                </td>
+            }
+        </tr>
+    </table>
+    <p>Организатор: @item.User.Email</p>
+    <hr />
+}
+
+
